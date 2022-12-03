@@ -7,63 +7,59 @@
     <h:head>
         <title>Bean Validation JSF</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta charset="utf-8"/>
-        
+        <meta charset="utf-8"/>  
+        <link rel="stylesheet" href="css/style.css"/>
     </h:head>
-    <h:body>
 
-        
-        <div class="row-fluid">
-            <h:form class="form-horizontal">
+    <h:body>
+        <div>
+            <h:form  class="formulario">
                 <fieldset>
-                    <div id="legend">
-                        <legend class="">Formulário de registro</legend>
-                    </div>
+                    <div><legend class="title">Formulário de Registro</legend></div>
 
                     <h:messages/>
                     <!-- Nome -->
-                    <div class="control-group">
-                        <label class="control-label"  for="nome">Nome</label>
-                        <div class="controls">
-                            <h:inputText  id="nome" value="#{usuarioBean.usuario.nome}" p:placeholder="Digite nome" class="input-xlarge"/>
+                    <div>
+                        <label class="label"><span>Nome:</span>
+                        <div>
+                            <h:inputText class="campo" value="#{usuarioBean.usuario.nome}" p:placeholder="Digite nome"/>
                         </div>
+                        </label>
                     </div>
 
                     <!-- Senha -->
-                    <div class="control-group">
-                        <label class="control-label" for="senha">Senha</label>
-                        <div class="controls">
-                            <h:inputSecret  id="senha" value="#{usuarioBean.usuario.senha}" p:placeholder="Digite senha" class="input-xlarge"/>
+                    <div >
+                        <label class="label"><span>Senha:</span>
+                        <div >
+                            <h:inputSecret  class="campo" value="#{usuarioBean.usuario.senha}" p:placeholder="Digite senha"/>
                         </div>
+                        </label>
                     </div>
 
                     <!-- Nascimento-->
-                    <div class="control-group">
-                        <label class="control-label" for="nascimento"> Data de nascimento</label>
-                        <div class="controls">
-                            <h:inputText p:type="date" id="nascimento" value="#{usuarioBean.usuario.nascimento}"  class="input-xlarge">
-                                <f:convertDateTime pattern="yyyy-M-d"/>
+                    <div >
+                        <label class="label"><span>Data de nascimento:</span>
+                        <div>
+                            <h:inputText class="campo" p:type="date" value="#{usuarioBean.usuario.nascimento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>
                             </h:inputText>
                         </div>
+                        </label>
                     </div>
 
                     <!-- Email -->
-                    <div class="control-group">
-                        <label class="control-label"  for="email">Email</label>
-                        <div class="controls">
-                            <h:inputText  id="email" value="#{usuarioBean.usuario.email}" p:placeholder="Digite email" class="span2"/>
-                        </div>
+                    <div>
+                        <label class="label"><span>Email:</span>
+                        <div>
+                            <h:inputText  class="campo" value="#{usuarioBean.usuario.email}" p:placeholder="Digite email"/>                              </div>
+                            </label>
                     </div>
-
-
 
                     <!-- Submit -->
-                    <div class="control-group">
-                        <div class="controls">
-                            <h:commandButton value="Registrar" action="#{usuarioBean.save()}" class="btn btn-success"/>
-                        </div>
-                    </div>
 
+                    <div id="botao">
+                        <h:commandButton class="botao" value="Registrar" action="#{usuarioBean.save()}"/>
+                    </div>
                 </fieldset>
             </h:form>
         </div>
