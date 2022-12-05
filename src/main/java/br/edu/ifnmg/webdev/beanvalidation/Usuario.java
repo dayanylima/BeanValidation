@@ -26,8 +26,6 @@ public class Usuario implements Serializable {
     @Email(message = "Email deve ser válido.")
     private String email;
 
-    private String cpf;
-    
     @Past(message = "A data de nascimento deve ser anterior a data atual.")
     @NotNull(message = "Data de nascimento não pode ser nula.")
     private Date nascimento;
@@ -56,15 +54,6 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-    
-    
     public Date getNascimento() {
 
         return nascimento;
